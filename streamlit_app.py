@@ -34,7 +34,7 @@ import snowflake.connector
 print("hello mofo!")
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
-print("got a connection")
+streamlit.text("got a connection")
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 
