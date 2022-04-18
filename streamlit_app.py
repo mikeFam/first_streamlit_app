@@ -31,17 +31,17 @@ streamlit.dataframe(fruityvice_normalized)
 streamlit.text("code works fine before import")
 import snowflake.connector
 
-print("hello mofo!")
+streamlit.text("hello mofo!")
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 streamlit.text("got a connection")
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 
-print("the cursor execute something!")
+streamlit.text("the cursor execute something!")
 my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
-print("it fetched something")
+streamlit.text("it fetched something")
 
 
